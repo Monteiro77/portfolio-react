@@ -1,9 +1,21 @@
-# React + Vite
+# Meu Portfólio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![](./src/assets/printSite.png)
+## [Cique Aqui](https://portfolio-react-kappa-five.vercel.app) para acessar o site
+---
+## Sobre 
+Portfólio criado para a matéria de Web Dev.
+O objetivo desse projeto é colocar em prática os conhecimentos sobre o desenvolvimentos de sites adquiridos no curso de Engenharia de Software na [FIAP](https://jandira.sp.senai.br/).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# portfolio-react
+## Tecnologia utilizidas
+- React
+- CSS3
+- Responsividade
+- JavaScript
+
+---
+
+## Autor
+- [Vinícius Monteiro](https://github.com/Monteiro77)
