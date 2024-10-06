@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import projeto1 from '../../assets/amongjump.JPG';
 import projeto2 from '../../assets/arcticmokeys.JPG';
 import projeto3 from '../../assets/pikachu.JPG';
@@ -7,7 +6,7 @@ import projeto4 from '../../assets/lionschooldesktop.JPG';
 import projeto5 from '../../assets/saveats.jpeg';
 import projeto6 from '../../assets/softsy.JPG';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
+import './Slider.css'
 
 const images = [
     { id: 1, src: projeto1, alt: 'Imagem 1' },
@@ -20,7 +19,27 @@ const images = [
 
 const Slider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const slidesPerView = 2; 
+    const [slidesPerView, setSlidesPerView] = useState(2);
+
+    // Função para ajustar o número de slides por visualização de acordo com o tamanho da tela
+    const handleResize = () => {
+        if (window.innerWidth < 640) {
+            setSlidesPerView(1); // 1 slide por vez em dispositivos menores
+        } else if (window.innerWidth < 1024) {
+            setSlidesPerView(2); // 2 slides por vez em tablets
+        } else {
+            setSlidesPerView(3); // 3 slides por vez em telas maiores
+        }
+    };
+
+    useEffect(() => {
+        handleResize(); // Verifica o tamanho da tela ao carregar
+        window.addEventListener('resize', handleResize); // Atualiza o número de slides ao redimensionar a tela
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const totalSlides = Math.ceil(images.length / slidesPerView);
 
     const nextSlide = () => {
@@ -32,7 +51,7 @@ const Slider = () => {
     };
 
     return (
-        <div className="flex mb-4 w-3/5  relative items-center">
+        <div className="flex mb-4 w-full md:w-3/5 relative items-center">
             <button onClick={prevSlide} className="bg-gray-700 text-white rounded px-2 py-1">
                 <FaChevronLeft />
             </button>
@@ -41,13 +60,13 @@ const Slider = () => {
                     className="flex transition-transform duration-300 h-full"
                     style={{
                         transform: `translateX(-${currentSlide * (100 / totalSlides)}%)`,
-                        width: `${images.length * 50}%`, 
+                        width: `${images.length * (100 / slidesPerView)}%`,
                     }}
                 >
                     {images.map((image) => (
                         <div
                             key={image.id}
-                            className="h-full w-1/2 flex items-center bg-black justify-center mx-2"
+                            className="h-full w-full flex items-center bg-black justify-center mx-2"
                         >
                             <img src={image.src} alt={image.alt} className="object-contain h-full" />
                         </div>

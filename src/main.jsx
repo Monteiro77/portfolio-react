@@ -7,6 +7,7 @@ import PageNotFound from './pages/PageNotFound'
 import MainContent from "./Componentes/MainContent/MainContent";
 import SobreMim from './pages/SobreMim'
 import Projetos from './pages/Projetos'
+import Contact from './pages/Contato'
 
 
 
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       {index:true, element: <MainContent/>},
       {path:'/sobre', element: <SobreMim/>},
       {path:'/projetos', element: <Projetos/>},
+      {path:'/contato', element: <Contact/>},
       {path:'*', element: <PageNotFound/>}
     ]
   }

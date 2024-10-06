@@ -1,35 +1,57 @@
-import { Link } from "react-router-dom";
-import "./header.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa'; // Ícones para hambúrguer e "fechar"
+import './header.css';
 
 function Header() {
-    return (
-        <header className="flex flex-row justify-between items-center text-white h-28 px-24 bg-backgroundcolor">
-            <nav>
-                <ul className="flex flex-row gap-20 text-xl">
-                    <li>
-                        <Link to='/' className="nav-link">Home</Link>
-                    </li>
-                    <li>
-                        <Link to='/sobre' className="nav-link">Sobre Mim</Link>
-                    </li>
-                    <li>
-                        <Link to='/projetos' className="nav-link">Projetos</Link>
-                    </li>
-                    <li>
-                        <Link to='/contato' className="nav-link">Contato</Link>
-                    </li>
-                </ul>
-            </nav>
+  const [isOpen, setIsOpen] = useState(false); // Controla o estado do menu
 
-            <h1 className="text-lg">
-                <code>
-                    <span className="text-customBlue">&lt;</span>
-                    viniciusmonteiro
-                    <span className="text-customBlue">/&gt;</span>
-                </code>
-            </h1>
-        </header>
-    );
+  const toggleMenu = () => {
+    setIsOpen(!isOpen); // Alterna o estado do menu aberto ou fechado
+  };
+
+  return (
+    <header className="flex flex-row justify-between items-center h-28 bg-backgroundcolor text-white px-6 md:px-24">
+      <h1 className="text-lg">
+        <code>
+          <span className="text-customBlue">&lt;</span>
+          viniciusmonteiro
+          <span className="text-customBlue">/&gt;</span>
+        </code>
+      </h1>
+
+      {/* Botão hambúrguer para telas menores */}
+      <button className="md:hidden text-3xl" onClick={toggleMenu}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
+      {/* Links de navegação */}
+      <nav className={`md:block ${isOpen ? 'block' : 'hidden'} absolute md:static top-28 left-0 w-full bg-backgroundcolor md:w-auto md:flex md:gap-20`}>
+        <ul className="flex flex-col md:flex-row gap-10 md:gap-20 text-xl md:items-center px-8 md:px-0 py-4 md:py-0">
+          <li>
+            <Link to="/" className="nav-link" onClick={toggleMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/sobre" className="nav-link" onClick={toggleMenu}>
+              Sobre Mim
+            </Link>
+          </li>
+          <li>
+            <Link to="/projetos" className="nav-link" onClick={toggleMenu}>
+              Projetos
+            </Link>
+          </li>
+          <li>
+            <Link to="/contato" className="nav-link" onClick={toggleMenu}>
+              Contato
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
 export default Header;

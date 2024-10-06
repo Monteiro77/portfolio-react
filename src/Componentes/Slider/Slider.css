@@ -1,0 +1,17 @@
+@media (max-width: 640px) {
+    .carousel-slide {
+        width: 100%; /* Ocupa 100% em telas pequenas */
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+    .carousel-slide {
+        width: 50%; /* Ocupa 50% em tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel-slide {
+        width: 33.33%; /* Ocupa 33.33% em telas grandes */
+    }
+}
