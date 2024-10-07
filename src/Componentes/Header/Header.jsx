@@ -11,7 +11,7 @@ function Header() {
   };
 
   return (
-    <header className="flex flex-row justify-between items-center h-28 bg-backgroundcolor text-white px-6 md:px-24">
+    <header className="flex flex-row justify-between items-center h-16 bg-backgroundcolor text-white px-6 md:px-24">
       <h1 className="text-lg">
         <code>
           <span className="text-customBlue">&lt;</span>
@@ -26,8 +26,12 @@ function Header() {
       </button>
 
       {/* Links de navegação */}
-      <nav className={`md:block ${isOpen ? 'block' : 'hidden'} absolute md:static top-28 left-0 w-full bg-backgroundcolor md:w-auto md:flex md:gap-20`}>
-        <ul className="flex flex-col md:flex-row gap-10 md:gap-20 text-xl md:items-center px-8 md:px-0 py-4 md:py-0">
+      <nav
+        className={`md:block ${
+          isOpen ? 'block' : 'hidden'
+        } fixed md:static top-16 left-0 w-full bg-backgroundcolor md:w-auto md:flex md:gap-20 z-40 transition-all duration-300 ease-in-out`}
+      >
+        <ul className="flex flex-col md:flex-row gap-10 md:gap-16 text-xl md:items-center px-8 md:px-0 py-4 md:py-0">
           <li>
             <Link to="/" className="nav-link" onClick={toggleMenu}>
               Home

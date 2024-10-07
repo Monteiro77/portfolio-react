@@ -33,7 +33,7 @@ function MainContent() {
         <img
           src={profileImage}
           alt="Vinícius Monteiro"
-          className="rounded-full w-40 h-40 md:w-96 md:h-96 border-4 border-white object-cover"
+          className="rounded-full w-64 h-64 md:w-96 md:h-96 sm:w-64 sm:h-64  border-4 border-white object-cover"
         />
       </div>
     </section>

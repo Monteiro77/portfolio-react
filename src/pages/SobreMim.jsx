@@ -3,7 +3,7 @@ import { FaGraduationCap, FaBullseye } from 'react-icons/fa'; // Ícones para Fo
 
 function SobreMim() {
     return (
-        <section className="flex flex-col justify-center items-center bg-gradient-to-b from-backgroundcolor to-gray-800 text-white h-full px-4 md:px-10 gap-16">
+        <section className="flex flex-col justify-center items-center bg-gradient-to-b from-backgroundcolor to-gray-800 text-white h-full px-4 pb-6 md:px-10 gap-16 ">
 
             <h1 className="text-5xl md:text-8xl font-bold mb-8 text-center">Sobre mim</h1>
             <div className='flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16 w-full'>

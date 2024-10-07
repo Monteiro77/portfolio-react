@@ -1,13 +1,24 @@
 header {
     background-color: #1E1E1E;
+    padding: 16px 0; /* Garante que o header tenha espaçamento */
+    position: relative;
+    z-index: 100;
   }
   
+  /* Para evitar que o nav fique absoluto quando em telas grandes */
+  nav {
+    position: static; /* Em telas grandes */
+  }
+  
+  /* Ajuste das margens e comportamento responsivo */
   .nav-link {
     position: relative;
     text-decoration: none;
     color: white;
+    padding: 8px 0;
   }
   
+  /* Efeito de hover */
   .nav-link::after {
     content: '';
     position: absolute;
@@ -28,6 +39,7 @@ header {
   @media (min-width: 768px) {
     .nav-link {
       display: inline-block;
+      padding: 0 16px; /* Espaçamento entre links */
     }
   }
   

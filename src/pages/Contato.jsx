@@ -3,7 +3,7 @@ import { FaGithub, FaEnvelope, FaLinkedin, FaWhatsapp, FaInstagram } from 'react
 
 const Contact = () => {
   return (
-    <section className="bg-gradient-to-b from-backgroundcolor to-gray-800 text-white h-full flex flex-col items-center justify-center p-4">
+    <section className="bg-gradient-to-b from-backgroundcolor to-gray-800 text-white min-h-full flex flex-col items-center justify-center ">
       <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-10 text-center">Contato</h1>
 
       <div className="flex flex-wrap justify-center w-full mb-10 gap-12">
@@ -31,10 +31,10 @@ const Contact = () => {
 
       <h2 className="text-xl md:text-2xl mb-4 text-center">Entre em contato comigo!</h2>
       <p className="text-center text-gray-400 mb-8">
-        Entre em contato conosco através do formulário abaixo
+        Entre em contato através do formulário abaixo
       </p>
 
-      <form className="w-full max-w-lg space-y-4">
+      <form className="w-full max-w-lg space-y-4 pb-4">
         <input
           type="text"
           placeholder="Seu nome"
