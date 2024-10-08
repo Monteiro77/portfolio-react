@@ -8,6 +8,7 @@ import MainContent from "./Componentes/MainContent/MainContent";
 import SobreMim from './pages/SobreMim'
 import Projetos from './pages/Projetos'
 import Contact from './pages/Contato'
+import SobreProjeto from './pages/SobreProjeto'
 
 
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       {path:'/sobre', element: <SobreMim/>},
       {path:'/projetos', element: <Projetos/>},
       {path:'/contato', element: <Contact/>},
+      {path:'/projetos/:id', element: <SobreProjeto/>},
       {path:'*', element: <PageNotFound/>}
     ]
   }

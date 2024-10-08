@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaGithub, FaEnvelope, FaLinkedin, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {

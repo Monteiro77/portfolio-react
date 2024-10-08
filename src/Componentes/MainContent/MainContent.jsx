@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import profileImage from '../../assets/imagePerfil.jpeg';
 import Typewriter from 'react-typewriter-effect';
+
+
 
 function MainContent() {
   const [fade, setFade] = useState(false); // Estado para controle de opacidade
@@ -13,7 +15,8 @@ function MainContent() {
     return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado
   }, []);
 
-  return (
+  return (<>
+
     <section className={`flex flex-col md:flex-row items-center justify-around h-full bg-backgroundcolor text-white px-4 md:px-20 transition-opacity duration-1000 ${fade ? 'opacity-100' : 'opacity-0'}`}>
       <div className="flex flex-col justify-center text-center md:text-left mb-8">
         <h1 className="text-3xl md:text-5xl font-semibold">
@@ -37,6 +40,8 @@ function MainContent() {
         />
       </div>
     </section>
+    
+    </>
   );
 }
 

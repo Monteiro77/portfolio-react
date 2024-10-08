@@ -1,0 +1,8 @@
+[
+    { "id": 1, "src": "../assets/amongjump.JPG", "alt": "Among Jump", "sobre": "Este jogo foi feito para a aprender mais sobre o JS" },
+    { "id": 2, "src": "../assets/arcticmokeys.JPG", "alt": "Arctic Monkeys", "sobre": "Este site foi feito para aprender mais sobre HTML5 e CSS3" },
+    { "id": 3, "src": "../assets/pikachu.JPG", "alt": "Pikachu", "sobre": "Este site foi feito para aprender mais sobre HTML5 e CSS3" },
+    { "id": 4, "src": "../assets/lionschooldesktop.JPG", "alt": "Lion School", "sobre": "Este site foi feito para aprender mais sobre HTML5, CSS3 e JS, minha primeira vez criando um Back-End em Node.JS, e tambem consumindo dados" },
+    { "id": 5, "src": "../assets/saveats.jpeg", "alt": "SaveEats", "sobre": "Este foi o meu projeto para o TCC do SENAI Jandira, onde apresentamos uma solução inovadora para combater o despedício de alimento. O Projeto possui um App Mobile e um Site, ambos consumindo dados do Back" },
+    { "id": 6, "src": "../assets/softsy.JPG", "alt": "Softsy Teste", "sobre": "Este foi o meu teste para iniciar na carreira de Dev, onde criei um formulário de cadastro, tambem possuindo uma listagem."}
+]
