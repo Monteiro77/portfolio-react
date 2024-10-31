@@ -10,6 +10,7 @@ import projeto8 from "../assets/melodia-gamma.vercel.app_.png";
 import projeto9 from "../assets/monteiro77.github.io_Projeto-AirMax-Lima_.png";
 import { FaGithub } from "react-icons/fa";
 import { Button } from "@material-tailwind/react";
+import  { useEffect, useState } from 'react';
 
 const projetos = [
   {
@@ -86,32 +87,41 @@ const projetos = [
 ];
 
 const SobreProjeto = () => {
+
+  const [fade, setFade] = useState(false); // Estado para controle de opacidade
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFade(true); // Ativar o efeito de esmaecimento após um pequeno atraso
+    }, 200); // Altere o valor conforme necessário para o efeito desejado
+
+    return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado
+  }, []);
+
+
   const { id } = useParams();
 
   const projeto = projetos.find((projeto) => projeto.id == id);
 
   return (
-    <section className="h-full bg-gradient-to-b from-backgroundcolor to-gray-800 flex  text-white py-12 flex-col justify-center  items-start gap-12 px-12">
-      <h1 className="text-5xl font-semibold">{projeto.alt}</h1>
-      <div className="w-full flex flex-row">
-        <div className="w-3/5">
-          <img src={projeto.src} alt="" />
+    <section className={`h-full bg-gradient-to-b from-backgroundcolor to-gray-800 flex  text-white py-12 flex-col justify-center items-center xl:items-start gap-12 px-12 transition-opacity duration-1000 ${fade ? 'opacity-100' : 'opacity-0'}`}>
+      <h1 className="text-4xl lg:text-5xl font-semibold">{projeto.alt}</h1>
+      <div className="w-full flex xl:flex-row items-center xl:items-start flex-col gap-5 xl:gap-0"> 
+        <div className="w-5/5">
+          <img src={projeto.src} alt={projeto.alt} className="w-full h-full object-contain" />
         </div>
-        <div className="flex flex-col h-full  justify-around gap-5 items-start px-5">
-            <h2 className="text-5xl">
-                Sobre
-            </h2>
+        <div className="flex flex-col h-full w-full justify-around gap-5 items-center xl:items-start px-5 ">
+          <h2 className="text-5xl">
+            Sobre
+          </h2>
           <p className="text-sm">{`Projeto ${projeto.sobre}`}</p>
-          <div className="flex flex-row gap-5">
-          <a href={projeto.linkGit}>
-            <FaGithub size={40}></FaGithub>
-          </a>
-          <Button color="blue"><a href={projeto.linkSite}>Acessar Site</a></Button>
+          <div className="flex flex-col items-center xl:flex-row gap-5">
+            <a href={projeto.linkGit}>
+              <FaGithub size={40}></FaGithub>
+            </a>
+            <Button color="blue"><a href={projeto.linkSite} className="text-sm">Acessar Site</a></Button>
+          </div>
         </div>
-        </div>
-      </div>
-      <div className="flex flex-col items-center gap-16">
-       
       </div>
     </section>
   );
